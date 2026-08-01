@@ -1,0 +1,11 @@
+Skill creation runtime cap: 60-char description max (not 1024). Always ≤57 chars, trigger-first.
+§
+Hermes environment: /data is the ONLY persistent volume — 434MB ext4 on /dev/zd1152. Current usage ~10%. /tmp and /var/tmp are on overlay (1.5TB) — NEVER use overlay free space as Hermes capacity. All storage decisions must be based on `df -h /data` only. User insists overlay numbers must never be reported or used as Hermes capacity.
+§
+User has Hermes backup cron job (job_id: 3e09c61e5067, name: hermes-daily-backup) pushing to GitHub repo ghasemihj/myhermesback via HTTPS. Backup script at /data/.hermes/scripts/backup.sh runs every 24h. User explicitly said "هیچ Cron job، automation، background task نساز" — do NOT create cron jobs or automation unless explicitly requested.
+§
+User's gulf-kharg-watch skill v2.0.0 (user-owned, do NOT edit). Reports: /data/.hermes/reports/gulf-kharg-watch/. Daily cron 08:00 IRST (d4a614a366a1). Source registries: telegram-source-registry.md, south-iran-telegram-sources.md, south-iran-web-source-registry.md.
+§
+Ourbit Exchange API (user-owned Skill: crypto-portfolio-watch, Cron: ba737d8a9800). Spot: api.ourbit.com, HMAC query string. Futures: futures.ourbit.com, HMAC headers (different auth!). Docs: ourbitdevelop.github.io (spot_v3_en, contract_en). Working: myTrades, openOrders, allOrders, Futures history_orders, order_deals. /api/v3/account denied (700007). Futures docs limited (2 endpoints, no positions/balance). Data: /data/.hermes/reports/crypto-portfolio-watch/. Cron model: MyMIMOhermes1. pages_received bug fixed (was page-1=0). Report: always show quality/endpoints/timestamps. umbrella skill: exchange-api-monitoring
+§
+gulf-kharg-watch-daily cron (d4a614a366a1) model/provider binding fix: setting per-job model WITHOUT provider causes HTTP 401. Must set both together: `{model: "MyMIMOhermes1", provider: "openai-api"}`. After provider fix, got HTTP 502 timeout — likely transient network issue from cron runtime environment to API endpoint. Not yet resolved.
