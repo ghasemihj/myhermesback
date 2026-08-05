@@ -1,0 +1,5 @@
+User name: Jason (جیسون). Primary language: Persian/Farsi — all requests and expected outputs in Farsi. Builds OSINT situational awareness systems focused on Iran, Persian Gulf, Strait of Hormuz, Kharg Island, and southern Iranian coasts. Very detail-oriented; provides extremely granular rules and templates. Prefers structured tabular output with exact timestamps (Gregorian + Jalali). Never display secrets, tokens, .env, or auth.json content.
+§
+User actively follows @javanmardi77 on Telegram for real-time OSINT news and shares breaking content for expert fact-checking. Expects multi-source verification (especially local/regional Arabic-language sources) before confirming or debunking claims. Shares images from Telegram for immediate visual analysis and context verification.
+§
+User actively monitors and shares breaking news from Telegram channels @javanmardi77, @doctordaraei, @khabari_18, and @alonews (AloNews — اخبار جنگ). Expects immediate fact-checking and multi-source verification of every claim before confirming or debunking. Primary language for all output: Persian/Farsi.
