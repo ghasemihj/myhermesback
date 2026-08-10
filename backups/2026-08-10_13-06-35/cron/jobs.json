@@ -1,0 +1,99 @@
+{
+  "jobs": [
+    {
+      "id": "3e09c61e5067",
+      "name": "hermes-daily-backup",
+      "prompt": "Execute the Hermes backup script at /data/.hermes/scripts/backup.sh and report the results. Run the script, check its output, and summarize what was backed up (backup size, file count, skills count, memories count, sessions count). If the backup fails, report the error.",
+      "skills": [],
+      "skill": null,
+      "model": "MyMIMOhermes1",
+      "provider": "openai-api",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 1440,
+        "display": "every 1440m"
+      },
+      "schedule_display": "every 1440m",
+      "repeat": {
+        "times": null,
+        "completed": 10
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-30T12:54:17.224574+00:00",
+      "next_run_at": "2026-08-11T13:06:00.483558+00:00",
+      "last_run_at": "2026-08-09T13:05:47.546659+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5895872406",
+        "chat_name": "Jason Hj",
+        "thread_id": null,
+        "user_id": "5895872406"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "d4a614a366a1",
+      "name": "gulf-kharg-watch-daily",
+      "prompt": "Daily Gulf-Kharg Watch situational awareness report. Load skill gulf-kharg-watch and generate a 24-hour report following the skill template. Sources: registered web sources, RSS feeds, Telegram channels (@VahidOnline, @javanmardi77, @khabari_18, @hormozgan_today). Rules: direct URL required for every event, HTTPS URLs only, separate publication time from claimed event time, classify social signals S0-SX, reposts of same content count as one signal, professional media not counted as social signals, single-source claims not in confirmed section, confirmed events require official source or 2+ independent sources, unresolved claims stay in under-review section, for Kharg/Booshehr absence of data does not equal absence of events, label analysis as assessment, use probability terms (very likely/likely/possible/unlikely), no live positions of forces/vessels/defense systems, no media downloads, max 12 sources and 8 events/signals, check Gregorian/Jalali dates and UTC/IRST conversion, check /data free space before and after. Output format: 1) Report time and period, 2) Executive summary max 8 lines, 3) Overall status (green/yellow/orange/red), 4) Confirmed events, 5) Claims under review, 6) Kharg and Bushehr status, 7) Hormozgan and Bandar Abbas status, 8) Strait of Hormuz and shipping security, 9) Social media fast signals, 10) Rejected/old/unrelated content, 11) 24-72 hour assessment, 12) Indicators to watch, 13) Report limitations, 14) Sources with direct URLs and confidence levels. Civilian recommendations only. Save report to /data/.hermes/reports/gulf-kharg-watch/latest.md and also as gulf-kharg-watch-YYYY-MM-DD-HHMM-IRST.md. Keep only last 7 reports. Delete older reports.",
+      "skills": [
+        "gulf-kharg-watch"
+      ],
+      "skill": "gulf-kharg-watch",
+      "model": "MyMIMOhermes1",
+      "provider": "openai-api",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 15
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-31T00:01:07.766396+00:00",
+      "next_run_at": "2026-08-11T08:00:00+00:00",
+      "last_run_at": "2026-08-10T08:32:33.057674+00:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: Response truncated due to output length limit",
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5895872406",
+        "chat_name": "Jason Hj",
+        "thread_id": null,
+        "user_id": "5895872406"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    }
+  ],
+  "updated_at": "2026-08-10T13:06:00.484091+00:00"
+}
