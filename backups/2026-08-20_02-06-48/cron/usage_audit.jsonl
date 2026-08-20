@@ -1,0 +1,2 @@
+{"ts": "2026-08-19T02:05:30.660Z", "job_id": "3e09c61e5067", "fire_id": "88a25e74953148aeb2073d2d7b608532", "prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "response_silent": false, "deliver_target": "origin", "model": "MyMIMOhermes1", "duration_ms": 38258, "error": null}
+{"ts": "2026-08-19T08:20:22.553Z", "job_id": "d4a614a366a1", "fire_id": "18d1a1568b9c4bdeb3258628eac831ac", "prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "response_silent": false, "deliver_target": "origin", "model": "MyMIMOhermes1", "duration_ms": 1168718, "error": null}
