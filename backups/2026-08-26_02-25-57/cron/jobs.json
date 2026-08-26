@@ -1,0 +1,102 @@
+{
+  "jobs": [
+    {
+      "id": "3e09c61e5067",
+      "name": "hermes-daily-backup",
+      "prompt": "Execute the Hermes backup script at /data/.hermes/scripts/backup.sh and report the results. Run the script, check its output, and summarize what was backed up (backup size, file count, skills count, memories count, sessions count). If the backup fails, report the error.",
+      "skills": [],
+      "skill": null,
+      "model": "MyMIMOhermes1",
+      "provider": "openai-api",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 1440,
+        "display": "every 1440m"
+      },
+      "schedule_display": "every 1440m",
+      "repeat": {
+        "times": null,
+        "completed": 23
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-30T12:54:17.224574+00:00",
+      "next_run_at": "2026-08-27T02:25:51.778290+00:00",
+      "last_run_at": "2026-08-24T02:24:22.105197+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5895872406",
+        "chat_name": "Jason Hj",
+        "thread_id": null,
+        "user_id": "5895872406"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": {
+        "at": "2026-08-26T02:25:51.789270+00:00",
+        "by": "66bf2a3304a2:2:889010df37954427bef66bf76d956676"
+      },
+      "failure_streak": 0
+    },
+    {
+      "id": "d4a614a366a1",
+      "name": "gulf-kharg-watch-daily",
+      "prompt": "Use delegate_task to spawn ONE subagent with role=orchestrator. Give it this complete task:\n\nGoal: Generate Gulf-Iran daily situational awareness report and save to file.\n\nContext to pass to subagent:\n- Current time: run date first\n- Telegram channels to scan: alonews, VahidOnline, ourwarstoday, javanmardi77, hormozgan_today, AliBk, EabriLive, khabari_18\n- Web sources: BBC ME RSS, Al Jazeera, gCaptain, OilPrice, Google News RSS\n- Save report to: /data/.hermes/reports/gulf-kharg-watch/report-YYYY-MM-DDTHH-MM.md\n- Update symlink: ln -sf FILENAME /data/.hermes/reports/gulf-kharg-watch/latest.md\n- Report must have ALL 15 sections in Persian with Gregorian+Jalali dates\n- Do NOT load any skill files\n\nAfter delegate_task returns, your FINAL response must be ONLY the confirmation message from the subagent. Do NOT add any extra text.",
+      "skills": [],
+      "skill": null,
+      "model": "MyMIMOhermes1",
+      "provider": "openai-api",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 32
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-22T11:10:39.072670+00:00",
+      "paused_reason": null,
+      "created_at": "2026-07-31T00:01:07.766396+00:00",
+      "next_run_at": "2026-08-23T08:00:00+00:00",
+      "last_run_at": "2026-08-22T11:03:39.831411+00:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: Response truncated due to output length limit",
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5895872406",
+        "chat_name": "Jason Hj",
+        "thread_id": null,
+        "user_id": "5895872406"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null,
+      "failure_streak": 1
+    }
+  ],
+  "updated_at": "2026-08-26T02:25:51.789551+00:00"
+}
